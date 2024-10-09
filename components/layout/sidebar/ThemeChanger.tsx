@@ -17,7 +17,7 @@ const ThemeChanger = () => {
       <Switch
         checked={theme === "dark"}
         onCheckedChange={handleChange}
-        className={cn("bg-my-accent", theme === "dark" ? "bg-my-accent" : "bg-[#FFD700]")} // Conditional class names using cn
+        className={cn("bg-my-accent mx-4 data-[state=unchecked]:bg-my-accent",)} // Conditional class names using cn
       />
       <BsFillMoonStarsFill size="1rem" className="text-meduim-grey" />
     </div>

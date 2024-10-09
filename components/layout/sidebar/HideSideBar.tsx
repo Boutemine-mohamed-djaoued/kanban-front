@@ -7,7 +7,7 @@ interface HideSideBarProps {
 
 const HideSideBar: React.FC<HideSideBarProps> = ({ toggleDrawer }) => {
   return (
-    <button className="ms-5 mb-5 flex items-center gap-2" onClick={toggleDrawer(false)}>
+    <button className="ms-5 text-gray-500 mb-5 flex items-center gap-2" onClick={toggleDrawer(false)}>
       <FaEyeSlash />
       Hide Sidebar
     </button>

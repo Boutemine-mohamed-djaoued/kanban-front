@@ -1,7 +1,8 @@
+import CreateBoard from "@/app/(root)/components/dialogs/CreateBoard";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import type { RootState } from "@/redux/store";
 import { useSelector, useDispatch } from "react-redux";
-import { setBoards, setChosenBoard } from "@/redux/features/userData";
+import { setChosenBoard } from "@/redux/features/userData";
 const AllBoards = () => {
   const userData = useSelector((state: RootState) => state.userData);
   const dispatch = useDispatch();
@@ -10,17 +11,18 @@ const AllBoards = () => {
   };
 
   return (
-    <div className="py-5 mb-auto">
-      <h2 className="font-semibold my-2 px-5">ALL BOARDS ({userData.boards.length})</h2>
+    <div className="mb-auto">
+      <h2 className="font-semibold tracking-wider text-250 text-gray-500 my-2 px-5">ALL BOARDS ({userData.boards.length})</h2>
       {userData.boards.map((board: any, index: number) => (
         <button
           onClick={() => selectBoard(index)}
-          className={`py-2 my-1 w-[calc(100%-1.25rem)] ps-5 rounded-e-full flex items-center gap-2 ${index === userData.chosenBoard && "bg-my-accent text-white"}`}
+          className={`py-2 my-1 w-[calc(100%-1.25rem)] ps-5 rounded-e-full flex items-center gap-2 ${index === userData.chosenBoard ? "bg-my-accent text-white" : "text-gray-500"}`}
           key={index}>
-          <MdOutlineSpaceDashboard className={`${index === userData.chosenBoard && "text-white"}`}></MdOutlineSpaceDashboard>
+          <MdOutlineSpaceDashboard ></MdOutlineSpaceDashboard>
           {board.name}
         </button>
       ))}
+      <CreateBoard></CreateBoard>
     </div>
   );
 };

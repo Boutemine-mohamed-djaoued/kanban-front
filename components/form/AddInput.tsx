@@ -17,8 +17,9 @@ const AddInput = ({ index, value, setValue }: AddInputProps) => {
       <input
         onChange={(e) => handleChange(e)}
         value={value[index]}
-        className="dark:bg-dark-grey border-2 border-light-lines dark:border-dark-lines px-5 py-2 rounded-md w-full"
+        className="dark:bg-dark-grey ring-1 ring-gray-200 dark:border-dark-lines px-5 py-2 rounded-sm w-full"
         id="boardname"
+        placeholder="e.g. Make coffee"
       />
       <button onClick={deleteColumn}>
         <FaDeleteLeft className="text-meduim-grey" size={30}></FaDeleteLeft>

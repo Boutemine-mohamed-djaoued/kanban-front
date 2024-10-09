@@ -6,11 +6,11 @@ const SkeletonBody = () => {
     const columns = [];
     for (let j = 0; j < heights[i]; j++) {
       columns.push(
-        <Skeleton key={`${i}-${j}`} className="w-full h-[10rem] rounded-md bg-meduim-grey my-5" />
+        <Skeleton key={`${i}-${j}`} className="w-full h-[7rem] rounded-md light:bg-gray-300 my-5" />
       )
     }
     skeletons.push(
-      <div key={i} className="min-w-[20rem]">
+      <div key={i} className="min-w-[15rem]">
         <Skeleton className="w-full h-[1rem] rounded-md  my-5" />
         <Skeleton className="w-1/2 h-[1rem] rounded-md  my-5" />
         {columns}
@@ -20,7 +20,7 @@ const SkeletonBody = () => {
   return (
     <div className="flex p-5 gap-5 dark:bg-very-dark-grey bg-light-grey">
       {skeletons}
-      <Skeleton className="w-1/2 flex-1 rounded-md  my-5" />
+      <Skeleton className="w-1/2 flex-1 max-w-[15rem] rounded-md  my-5" />
     </div>
   )
 }
